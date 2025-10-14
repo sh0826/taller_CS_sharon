@@ -1,14 +1,28 @@
-## Taller de Calidad de Software
+# Taller de Calidad de Software
 
-Proyecto realizado por **Sharon Hernández**  
-Tecnólogo en Análisis y Desarrollo de Software  
+Proyecto desarrollado por **Sharon Hernández**  
+Tecnóloga en Análisis y Desarrollo de Software  
 
 ## Descripción
-Este proyecto contiene el taller de calidad de software, el cual tiene como proposito la creacion de una pagina web sencilla con el tema de venta de productos de portatiles y computadores de mesa.
-Con este taller se decide ir evidenciando el proceso de calidad de software con la herramienta de SonarQube cloud donde se debe evidenciar 3 errores del software y repararlos.
+Este proyecto corresponde al *Taller de Calidad de Software*, cuyo propósito es la creación de una página web sencilla enfocada en la **venta de computadores portátiles y de escritorio**.  
 
-## Tecnologías
-- Git y GitHub Desktop
-- Visual Studio Code
-- Lenguaje: PHP / Laravel
-- SonarQube
+Durante el desarrollo se evidenciará el proceso de **análisis de calidad del software** mediante la herramienta **SonarQube Cloud**, identificando y corrigiendo al menos tres errores detectados en el código.  
+
+El proyecto cumple con los siguientes requisitos:
+
+### Página de inicio de sesión (Login)
+- Autenticación de usuario y contraseña (simulada o real).
+
+### Panel de administrador (Dashboard)
+- Interfaz para la gestión de productos y tipos de productos.
+
+### Funcionalidad CRUD
+- Crear, visualizar, editar y eliminar registros de manera funcional.
+
+## Tecnologías utilizadas
+- **Git y GitHub Desktop**  
+- **MySQL Workbench**  
+- **Visual Studio Code**  
+- **PHP / Laravel**  
+- **SonarQube Cloud**
+
