@@ -1,0 +1,12 @@
+# Taller de Calidad de Software
+
+Proyecto realizado por **Sharon Hernández**  
+Tecnólogo en Análisis y Desarrollo de Software  
+
+## Descripción
+Este proyecto contiene el taller de calidad de software, con ejemplos de buenas prácticas y casos de prueba.
+
+## Tecnologías
+- Git y GitHub
+- Visual Studio Code
+- Lenguaje: PHP / Laravel 
