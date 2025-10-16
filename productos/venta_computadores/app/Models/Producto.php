@@ -49,8 +49,9 @@ class Producto extends Model
 		'tipo_producto_id'
 	];
 
-	public function tipo_producto()
-	{
-		return $this->belongsTo(TipoProducto::class);
-	}
+public function tipo_producto()
+{
+    return $this->belongsTo(TipoProducto::class, 'tipo_producto_id', 'id_Tpc');
+}
+
 }

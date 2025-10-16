@@ -32,7 +32,8 @@ class TipoProducto extends Model
 	];
 
 	public function productos()
-	{
-		return $this->hasMany(Producto::class);
-	}
+{
+    return $this->hasMany(Producto::class, 'tipo_producto_id', 'id_Tpc');
+}
+
 }

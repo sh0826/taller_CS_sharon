@@ -1,52 +1,72 @@
+@extends('layouts.admin')
+
+@section('title', 'Agregar nuevo producto')
+
 @section('content')
 <div class="container">
-    <h2>Lista de Productos</h2>
-    <a href="{{ route('admin.productos.create') }}" class="btn btn-primary">Nuevo Producto</a>
+    <h2 class="mb-4">Agregar Nuevo Producto</h2>
+
+    <a href="{{ route('productos.index') }}" class="btn btn-secondary mb-3">Volver a la lista</a>
 
     @if(session('success'))
-        <div class="alert alert-success mt-2">{{ session('success') }}</div>
+        <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <table class="table mt-3 table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Tipo</th>
-                <th>Stock</th>
-                <th>Precio</th>
-                <th>Imagen</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($productos as $producto)
-            <tr>
-                <td>{{ $producto->id_producto }}</td>
-                <td>{{ $producto->nombre }}</td>
-                <td>{{ $producto->tipo_producto }}</td>
-                <td>{{ $producto->stock }}</td>
-                <td>
-            @if($producto->imagen)
-             <img src="{{ asset('storage/' . $producto->imagen) }}" 
-             alt="Imagen de {{ $producto->nombre }}" 
-             width="80" height="80"
-             style="object-fit: cover; border-radius: 5px;">
-             @else
-             <span class="text-muted">Sin imagen</span>
-              @endif
-            </td>
-                <td>${{ number_format($producto->precio_unitario, 3) }}</td>
-                <td>
-                    <a href="{{ route('admin.productos.edit', $producto) }}" class="btn btn-warning btn-sm">Editar</a>
-                    <form action="{{ route('admin.productos.destroy', $producto) }}" method="POST" style="display:inline;">
-                        @csrf @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+    <form action="{{ route('productos.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+
+        <div class="mb-3">
+            <label class="form-label">Nombre:</label>
+            <input type="text" name="nombre" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Marca:</label>
+            <input type="text" name="marca" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Modelo:</label>
+            <input type="text" name="modelo" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Procesador:</label>
+            <input type="text" name="procesador" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">RAM:</label>
+            <input type="text" name="ram" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Almacenamiento:</label>
+            <input type="text" name="almacenamiento" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Precio:</label>
+            <input type="number" step="0.01" name="precio" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Imagen:</label>
+            <input type="file" name="imagen" class="form-control" accept="image/*">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Tipo de Producto:</label>
+            <select name="tipo_producto_id" class="form-select" required>
+                <option value="">Seleccione un tipo</option>
+                @foreach($tipos as $tipo)
+                    <option value="{{ $tipo->id_Tpc }}">{{ $tipo->nombre_Tpc }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Guardar producto</button>
+    </form>
 </div>
 @endsection
+

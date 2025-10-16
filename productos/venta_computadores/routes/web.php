@@ -4,12 +4,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\inicioSesionControlador;
 use App\Http\Controllers\ProductoController;
-
-Route::resource('productos', ProductoController::class);
-
+use App\Http\Controllers\TipoProductoController;
 
 Route::get('/', [inicioSesionControlador::class, 'showLoginForm'])->name('inicio');
-Route::post('/inicio', [inicioSesionControlador::class, 'inicio']);
-Route::get('/dashboard', [inicioSesionControlador::class, 'dashboard'])->name('dashboard');
-Route::get('/logout', [inicioSesionControlador::class, 'inicio'])->name('logout');
+Route::post('/login', [inicioSesionControlador::class, 'login'])->name('login');
+
+Route::resource('productos', ProductoController::class);
+Route::resource('tipo_productos', TipoProductoController::class);
 

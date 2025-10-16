@@ -5,41 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class inicioSesionControlador extends Controller
+
 {
-    // Muestra el formulario
+    // Muestra el formulario de login
     public function showLoginForm()
     {
-        return view('inicio');
+        return view('inicio'); // resources/views/inicio.blade.php
     }
 
-    // Procesa el inicio de sesión
+    // Procesa el "login" simple y redirige a productos.index sin validar
     public function login(Request $request)
     {
-        $user = $request->input('usuario');
-        $pass = $request->input('password');
+        // Opcional: puedes leer los inputs si quieres mostrar mensajes
+        // $usuario = $request->input('usuario');
 
-        if ($user === 'admin' && $pass === '1234') {
-            session(['admin' => true]);
-            return redirect()->route('dashboard');
-        }
-
-        return back()->with('error', 'Usuario o contraseña incorrectos');
-    }
-
-    // Muestra el dashboard (solo si está logueado)
-    public function dashboard()
-    {
-        if (!session('admin')) {
-            return redirect()->route('inicio');
-        }
-
-        return view('dashboard');
-    }
-
-    // Cierra sesión
-    public function logout()
-    {
-        session()->forget('admin');
-        return redirect()->route('inicio');
+        // Redirige siempre al index de productos (sin autenticar)
+        return redirect()->route('productos.index');
     }
 }
+
+
