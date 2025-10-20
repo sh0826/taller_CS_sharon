@@ -3,6 +3,68 @@
 @section('title', 'Agregar Tipo de Producto')
 
 @section('content')
+
+<style>
+    body {
+        background-color: #ffeef8;
+    }
+
+    .container {
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+        max-width: 700px;
+        margin-top: 30px;
+    }
+
+    h2 {
+        color: #e75480; /* Rosa fuerte */
+        font-weight: bold;
+        text-align: center;
+    }
+
+    label {
+        color: #e75480;
+        font-weight: 600;
+    }
+
+    .form-control {
+        border: 1px solid #f7a1c4;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .form-control:focus {
+        border-color: #e75480;
+        box-shadow: 0 0 8px rgba(231, 84, 128, 0.5);
+    }
+
+    .btn-success {
+        background-color: #e75480;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-success:hover {
+        background-color: #c94470;
+        transform: scale(1.03);
+    }
+
+    .btn-secondary {
+        background-color: #f7a1c4;
+        border: none;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .btn-secondary:hover {
+        background-color: #e75480;
+    }
+</style>
+
 <div class="container">
     <h2 class="mb-4">Agregar Nuevo Tipo de Producto</h2>
 
@@ -15,12 +77,14 @@
         </div>
 
         <div class="mb-3">
-            <label for="descripcion" class="form-label">Descripción</label>
-            <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
+            <label for="descripcion_Tpc" class="form-label">Descripción</label>
+            <textarea name="descripcion_Tpc" id="descripcion_Tpc" class="form-control"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-success">Guardar</button>
-        <a href="{{ route('tipo_productos.index') }}" class="btn btn-secondary">Volver</a>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success px-5">Guardar</button>
+            <a href="{{ route('tipo_productos.index') }}" class="btn btn-secondary px-4">Volver</a>
+        </div>
     </form>
 </div>
 @endsection

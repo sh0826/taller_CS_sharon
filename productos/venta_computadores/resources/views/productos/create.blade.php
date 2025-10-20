@@ -1,10 +1,77 @@
 @extends('layouts.admin')
 
-@section('title', 'Agregar nuevo producto')
+@section('title', 'Lista de tus productos!')
 
 @section('content')
+
+<style>
+    body {
+        background-color: #ffeef8;
+    }
+
+    .container {
+        background-color: #ffffffff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+        max-width: 700px;
+        margin-top: 30px;
+    }
+
+    h2 {
+        color: #e75480; /* Rosa fuerte */
+        font-weight: bold;
+    }
+
+    label {
+        color: #e75480;
+        font-weight: 600;
+    }
+
+    .form-control, .form-select {
+        border: 1px solid #f7a1c4;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .form-control:focus, .form-select:focus {
+        border-color: #e75480;
+        box-shadow: 0 0 8px rgba(231, 84, 128, 0.5);
+    }
+
+    .btn-success {
+        background-color: #e75480;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-success:hover {
+        background-color: #c94470;
+        transform: scale(1.03);
+    }
+
+    .btn-secondary {
+        background-color: #f7a1c4;
+        border: none;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .btn-secondary:hover {
+        background-color: #e75480;
+    }
+
+    .alert-success {
+        background-color: #fce4ec;
+        color: #c2185b;
+        border: 1px solid #f8bbd0;
+    }
+</style>
+
 <div class="container">
-    <h2 class="mb-4">Agregar Nuevo Producto</h2>
+    <h2 class="mb-4 text-center">Agregar Nuevo Producto</h2>
 
     <a href="{{ route('productos.index') }}" class="btn btn-secondary mb-3">Volver a la lista</a>
 
@@ -65,8 +132,9 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-success">Guardar producto</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success px-5">Guardar producto</button>
+        </div>
     </form>
 </div>
 @endsection
-

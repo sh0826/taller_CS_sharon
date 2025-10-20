@@ -25,8 +25,9 @@ class TipoProductoController extends Controller
     {
         $validated = $request->validate([
             'nombre_Tpc' => 'required|string|max:100',
-            'descripcion_Tpc' => 'nullable|string',
+            'descripcion_Tpc' => 'nullable|string|max:250',
         ]);
+        $validated['descripcion_Tpc'] = $validated['descripcion_Tpc'] ?? '';
 
         TipoProducto::create($validated);
         return redirect()->route('tipo_productos.index')->with('success', 'Tipo de producto creado correctamente.');
