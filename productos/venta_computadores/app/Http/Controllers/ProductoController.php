@@ -37,10 +37,10 @@ public function index()
     $validated = $request->validate([
         'nombre' => 'required|string|max:150',
         'marca' => 'required|string|max:100',
-        'modelo' => 'nullable|string|max:100',
-        'procesador' => 'nullable|string|max:100',
+        'modelo' => 'nullable|string|max:150',
+        'procesador' => 'nullable|string|max:50',
         'ram' => 'nullable|string|max:50',
-        'almacenamiento' => 'nullable|string|max:100',
+        'almacenamiento' => 'nullable|string|max:200',
         'precio' => 'required|numeric|min:0',
         'imagen' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         'tipo_producto_id' => 'required|integer'
