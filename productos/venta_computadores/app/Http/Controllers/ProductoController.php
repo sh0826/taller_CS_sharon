@@ -37,10 +37,10 @@ public function index()
     $validated = $request->validate([
         'nombre' => 'required|string|max:150',
         'marca' => 'required|string|max:100',
-        'modelo' => 'nullable|string|max:150',
-        'procesador' => 'nullable|string|max:50',
-        'ram' => 'nullable|string|max:50',
-        'almacenamiento' => 'nullable|string|max:200',
+        'modelo' => 'nullable|string|max:50',
+        'procesador' => 'nullable|string|max:60',
+        'ram' => 'nullable|string|max:70',
+        'almacenamiento' => 'nullable|string|max:80',
         'precio' => 'required|numeric|min:0',
         'imagen' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         'tipo_producto_id' => 'required|integer'
@@ -80,11 +80,11 @@ public function index()
    {
     $validated = $request->validate([
         'nombre' => 'required|string|max:150',
-        'marca' => 'required|string|max:100',
-        'modelo' => 'nullable|string|max:100',
+        'marca' => 'required|string|max:130',
+        'modelo' => 'nullable|string|max:90',
         'procesador' => 'nullable|string|max:100',
-        'ram' => 'nullable|string|max:50',
-        'almacenamiento' => 'nullable|string|max:100',
+        'ram' => 'nullable|string|max:110',
+        'almacenamiento' => 'nullable|string|max:120',
         'precio' => 'required|numeric|min:0',
         'imagen' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         'tipo_producto_id' => 'required|integer'
