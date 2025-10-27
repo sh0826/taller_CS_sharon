@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class inicioSesionControlador extends Controller
+class Inicio extends Controller
 
 {
     // Muestra el formulario de login
