@@ -14,7 +14,7 @@ class inicioSesionControlador extends Controller
     }
 
     // Procesa el "login" simple y redirige a productos.index sin validar
-    public function login(Request $request)
+    public function login()
     {
         // Opcional: puedes leer los inputs si quieres mostrar mensajes
         // $usuario = $request->input('usuario');
